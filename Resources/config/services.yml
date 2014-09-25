@@ -1,0 +1,14 @@
+parameters:
+    ag_jawboneup_interface.client_id: ''
+    ag_jawboneup_interface.client_secret: ''
+    ag_jawboneup_interface.callback: ''
+    ag_jawboneup_interface.configuration: []
+services:
+    ag.jawboneup.interface:
+        class:     AG\JawboneUPInterfaceBundle\Jawbone\ApiGatewayFactory
+        arguments:
+            - %ag_jawboneup_interface.client_id%
+            - %ag_jawboneup_interface.client_secret%
+            - %ag_jawboneup_interface.callback%
+            - %ag_jawboneup_interface.configuration%
+            - @router
