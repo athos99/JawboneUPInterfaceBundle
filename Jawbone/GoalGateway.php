@@ -34,6 +34,7 @@ class GoalGateway extends EndpointGateway
 
         try
         {
+            $body = array();
             /** @var object $goals */
             $goals = $this->makeApiRequest('/users/@me/goals', 'GET', $body);
             $timer->stop('Get Goals');

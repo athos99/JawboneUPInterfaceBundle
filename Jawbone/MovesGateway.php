@@ -29,7 +29,7 @@ class MovesGateway extends EndpointGateway
      * @throws JawboneException
      * @return object The result as an object
      */
-    public function getActivities(\DateTime $date = null, \DateTime $startDate = null, \DateTime $endDate = null)
+    public function getMoves(\DateTime $date = null, \DateTime $startDate = null, \DateTime $endDate = null)
     {
         /** @var Stopwatch $timer */
         $timer = new Stopwatch();
