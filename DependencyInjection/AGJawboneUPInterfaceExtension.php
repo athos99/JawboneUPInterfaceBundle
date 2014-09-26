@@ -19,6 +19,7 @@ class AGJawboneUPInterfaceExtension extends Extension
         $container->setParameter('ag_jawbone_up_interface.client_id', $config['client_id']);
         $container->setParameter('ag_jawbone_up_interface.client_secret', $config['client_secret']);
         $container->setParameter('ag_jawbone_up_interface.callback', $config['callback']);
+        $container->setParameter('ag_jawbone_up_interface.scopes', $config['scopes']);
         $container->setParameter('ag_jawbone_up_interface.configuration', array());
     }
 

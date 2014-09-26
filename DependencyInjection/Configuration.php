@@ -21,6 +21,9 @@ class Configuration implements ConfigurationInterface
                 ->scalarNode('callback')
                     ->info('The callback URL to pass to Jawbone UP API ')
                 ->end()
+                ->scalarNode('scopes')
+                    ->info('The scopes array for Jawbone UP API ')
+                ->end()
             ->end();
 
         return $treeBuilder;

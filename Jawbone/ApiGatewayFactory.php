@@ -257,7 +257,7 @@ class ApiGatewayFactory
             {
                 $factory = new ServiceFactory();
                 if ($this->httpClient) $factory->setHttpClient($this->httpClient);
-                $this->service = $factory->createService('JawboneUP', $credentials, $this->storageAdapter, $scopes=$this->scopes);
+                $this->service = $factory->createService('JawboneUP', $credentials, $this->storageAdapter, $this->scopes);
             }
             catch (\Exception $e)
             {
