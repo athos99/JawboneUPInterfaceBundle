@@ -31,7 +31,7 @@ class AuthenticationGateway extends EndpointGateway
     {
         try
         {
-            return $this->service->getStorage()->hasAccessToken('Jawbone');
+            return $this->service->getStorage()->hasAccessToken('JawboneUP');
         }
         catch (\Exception $e)
         {
@@ -76,7 +76,7 @@ class AuthenticationGateway extends EndpointGateway
         try
         {
             /** @var TokenInterface $tokenSecret */
-            $tokenSecret = $this->service->getStorage()->retrieveAccessToken('Jawbone');
+            $tokenSecret = $this->service->getStorage()->retrieveAccessToken('JawboneUP');
         }
         catch (\Exception $e)
         {
@@ -120,7 +120,7 @@ class AuthenticationGateway extends EndpointGateway
 
         try
         {
-            $this->service->getStorage()->clearToken('Jawbone');
+            $this->service->getStorage()->clearToken('JawboneUP');
         }
         catch (\Exception $e)
         {
