@@ -7,7 +7,7 @@ namespace AG\JawboneUPInterfaceBundle\Jawbone;
 
 use OAuth\Common\Consumer\Credentials;
 use OAuth\ServiceFactory;
-use OAuth\OAuth2\Service\Jawbone as ServiceInterface;
+use OAuth\OAuth2\Service\JawboneUP as ServiceInterface;
 use OAuth\Common\Storage\TokenStorageInterface;
 use OAuth\Common\Http\Client\ClientInterface;
 use Symfony\Bundle\FrameworkBundle\Routing\Router;

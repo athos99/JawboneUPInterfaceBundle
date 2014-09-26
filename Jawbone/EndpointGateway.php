@@ -6,7 +6,7 @@
 namespace AG\JawboneUPInterfaceBundle\Jawbone;
 
 use SimpleXMLElement;
-use OAuth\OAuth2\Service\Jawbone as ServiceInterface;
+use OAuth\OAuth2\Service\JawboneUP as ServiceInterface;
 use Symfony\Component\Stopwatch\Stopwatch;
 use AG\JawboneUPInterfaceBundle\Jawbone\Exception as JawboneException;
 

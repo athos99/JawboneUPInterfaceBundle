@@ -65,7 +65,7 @@ class TokenStorage
                     $this->token->setRefreshToken($refreshToken);
                 }
 
-                $this->adapter->storeAccessToken('Jawbone', $this->token);
+                $this->adapter->storeAccessToken('JawboneUP', $this->token);
             }
             catch(\Exception $e)
             {
