@@ -4,7 +4,7 @@ parameters:
     ag_jawbone_up_interface.callback: ''
     ag_jawbone_up_interface.configuration: []
 services:
-    ag.jawboneup.interface:
+    ag.jawbone.up.interface:
         class:     AG\JawboneUPInterfaceBundle\Jawbone\ApiGatewayFactory
         arguments:
             - %ag_jawbone_up_interface.client_id%
