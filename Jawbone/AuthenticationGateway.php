@@ -19,7 +19,7 @@ use AG\JawboneUPInterfaceBundle\Jawbone\Exception as JawboneException;
 class AuthenticationGateway extends EndpointGateway
 {
     /**
-     * Determine if this user is authorised with Fitbit
+     * Determine if this user is authorised with Jawbone
      *
      * @access public
      * @version 0.0.1
@@ -36,6 +36,32 @@ class AuthenticationGateway extends EndpointGateway
         catch (\Exception $e)
         {
             throw new JawboneException('Could not find the access token.', 206, $e);
+        }
+    }
+
+    /**
+     * Determine if access token is expired and refresh it
+     *
+     * @access public
+     * @version 0.0.1
+     *
+     * @throws JawboneException
+     * @return bool
+     */
+    public function refreshTokenIfRequired()
+    {
+        try
+        {
+            $accessToken = $this->service->getStorage()->retrieveAccessToken('JawboneUP');
+            if ($accessToken->isExpired() !== TRUE) {
+                return FALSE;
+            }
+            $this->service->refreshAccessToken($accessToken);
+            return TRUE;
+        }
+        catch (\Exception $e)
+        {
+            throw new JawboneException('Could not refresh the access token.', 202, $e);
         }
     }
 
