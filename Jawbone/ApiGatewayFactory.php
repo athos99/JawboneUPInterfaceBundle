@@ -22,8 +22,9 @@ use AG\JawboneUPInterfaceBundle\Jawbone\Exception as JawboneException;
  * @version 0.0.1
  *
  * @method AuthenticationGateway getAuthenticationGateway()
- * @method ActivityGateway getActivityGateway()
- * @method AggregationGateway getAggregationGateway()
+ * @method GoalGateway getGoalGateway()
+ * @method MovesGateway getMovesGateway()
+ * @method SleepGateway getSleepGateway()
  */
 class ApiGatewayFactory
 {
@@ -48,6 +49,10 @@ class ApiGatewayFactory
      */
     protected $callbackURL;
     /**
+     * @var array
+     */
+    protected $scopes;
+    /**
      * @var ClientInterface
      */
     protected $httpClient;
@@ -71,13 +76,14 @@ class ApiGatewayFactory
      * @param array  $configuration Configurable items
      * @param Router $router
      */
-    public function __construct($clientId, $clientSecret, $callbackURL, $configuration, Router $router)
+    public function __construct($clientId, $clientSecret, $callbackURL, array $scopes, $configuration, Router $router)
     {
         $this->clientId       = $clientId;
         $this->clientSecret   = $clientSecret;
         $this->callbackURL    = $callbackURL;
         $this->configuration  = $configuration;
         $this->router         = $router;
+        $this->scopes         = $scopes;
     }
 
     /**
@@ -251,7 +257,7 @@ class ApiGatewayFactory
             {
                 $factory = new ServiceFactory();
                 if ($this->httpClient) $factory->setHttpClient($this->httpClient);
-                $this->service = $factory->createService('JawboneUP', $credentials, $this->storageAdapter);
+                $this->service = $factory->createService('JawboneUP', $credentials, $this->storageAdapter, $scopes=$this->scopes);
             }
             catch (\Exception $e)
             {

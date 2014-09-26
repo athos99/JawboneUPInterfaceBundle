@@ -60,14 +60,13 @@ class AuthenticationGateway extends EndpointGateway
      * Authenticate user, request access token.
      *
      * @access public
-     * @version 0.5.2
+     * @version 0.0.1
      *
      * @param string $code
-     * @param string $state
      * @throws JawboneException
      * @return TokenInterface
      */
-    public function authenticateUser($code, $state = null)
+    public function authenticateUser($code)
     {
         /** @var Stopwatch $timer */
         $timer = new Stopwatch();
@@ -75,21 +74,9 @@ class AuthenticationGateway extends EndpointGateway
 
         try
         {
-            /** @var TokenInterface $tokenSecret */
-            $tokenSecret = $this->service->getStorage()->retrieveAccessToken('JawboneUP');
-        }
-        catch (\Exception $e)
-        {
-            $timer->stop('Authenticating User');
-            throw new JawboneException('Could not retrieve the access token secret.', 202, $e);
-        }
-
-        try
-        {
             /** @var TokenInterface $tokenResponse */
             $tokenResponse = $this->service->requestAccessToken(
-                $code,
-                $state
+                $code
             );
             $timer->stop('Authenticating User');
             return $tokenResponse;
