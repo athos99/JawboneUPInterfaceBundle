@@ -16,14 +16,14 @@ class AGJawboneUPInterfaceExtension extends Extension
 
         $configuration = new Configuration();
         $config = $this->processConfiguration($configuration, $configs);
-        $container->setParameter('ag_jawboneup_interface.client_id', $config['client_id']);
-        $container->setParameter('ag_jawboneup_interface.client_secret', $config['client_secret']);
-        $container->setParameter('ag_jawboneup_interface.callback', $config['callback']);
-        $container->setParameter('ag_jawboneup_interface.configuration', array());
+        $container->setParameter('ag_jawbone_up_interface.client_id', $config['client_id']);
+        $container->setParameter('ag_jawbone_up_interface.client_secret', $config['client_secret']);
+        $container->setParameter('ag_jawbone_up_interface.callback', $config['callback']);
+        $container->setParameter('ag_jawbone_up_interface.configuration', array());
     }
 
     public function getAlias()
     {
-        return 'ag_jawboneup_interface';
+        return 'ag_jawbone_up_interface';
     }
 }

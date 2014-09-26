@@ -10,6 +10,6 @@ use Symfony\Component\HttpKernel\Bundle\Bundle;
  * @author Andrii Gakhov <andrii.gakhov@gmail.com>
  * @package AG\JawboneUPInterfaceBundle
  */
-class JawboneUPInterfaceBundle extends Bundle
+class AGJawboneUPInterfaceBundle extends Bundle
 {
 }

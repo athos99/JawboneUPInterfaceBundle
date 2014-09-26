@@ -10,7 +10,7 @@ class Configuration implements ConfigurationInterface
     public function getConfigTreeBuilder()
     {
         $treeBuilder = new TreeBuilder();
-        $rootNode = $treeBuilder->root('ag_jawboneup_interface')
+        $rootNode = $treeBuilder->root('ag_jawbone_up_interface')
             ->children()
                 ->scalarNode('client_id')
                     ->info('The client ID')
